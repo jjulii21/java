@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>출력할 구구단의 수 ㄱㄱ</h1>
+
+</body>
+<form class="container" name="ninenine">
+		<label for="num">출력할 구구단</label><br>
+		<!-- 서블릿에서 name과 입력된 값을 전달받게 된다. -->
+		<input type="text" name="num"><br><br>
+		<input type="button" onclick="servlet_req()" value="전송">
+	</form>
+<script type="text/javascript">
+	function servlet_req(){
+		var nn = document.ninenine;
+		var num = nn.num.value;
+		
+		if(num.length==0 || num ==""){
+			alert("머가...비어있는디..?");
+		}else{
+			for(let x = 1; x<=9;x++){
+				document.write(num+"*"+x+"="+x*num+"</br>");
+			}
+		}
+	}
+</script>	
+</html>
